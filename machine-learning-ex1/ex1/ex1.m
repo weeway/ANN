@@ -74,7 +74,7 @@ pause;
 
 fprintf('\nRunning Gradient Descent ...\n')
 % run gradient descent
-theta = gradientDescent(X, y, theta, alpha, iterations);
+[theta,J_history,theta_history] = gradientDescent(X, y, theta, alpha, iterations);
 
 % print theta to screen
 fprintf('Theta found by gradient descent:\n');
@@ -133,3 +133,8 @@ contour(theta0_vals, theta1_vals, J_vals, logspace(-2, 3, 20))
 xlabel('\theta_0'); ylabel('\theta_1');
 hold on;
 plot(theta(1), theta(2), 'rx', 'MarkerSize', 10, 'LineWidth', 2);
+
+% Plot theta of each theta_history
+% To see how the theta changes
+theta_history = [0,0;theta_history];
+plot(theta_history(:,1),theta_history(:,2),'r-');
