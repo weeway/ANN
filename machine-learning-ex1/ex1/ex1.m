@@ -138,3 +138,10 @@ plot(theta(1), theta(2), 'rx', 'MarkerSize', 10, 'LineWidth', 2);
 % To see how the theta changes
 theta_history = [0,0;theta_history];
 plot(theta_history(:,1),theta_history(:,2),'r-');
+
+figure;
+% Plot J_history
+plot(1:length(J_history),J_history,'g-');
+xlabel('iter');
+ylabel('J\_cost');
+title('Figure. J\_cost of each iterator');
